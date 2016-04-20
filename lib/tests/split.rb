@@ -5,7 +5,9 @@ class Tests::Split < Tests::Base
     @name = 'Split test'
   end
 
+
   private
+
 
   def prepare_records
     sample_size.times { User.new(variant: variants.sample).perform_test }
