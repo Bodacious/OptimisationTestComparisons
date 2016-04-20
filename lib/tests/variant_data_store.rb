@@ -1,3 +1,4 @@
+# A simple data store for test variant performance in EpsilonGreedy tests.
 class Tests::VariantDataStore
 
   attr_accessor :count
