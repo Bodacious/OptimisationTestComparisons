@@ -16,27 +16,29 @@ From initial testing, it confirms the expectations of Split A/B and Epsilon Gree
 
 **Epsilon greedy** tests require much larger sample sizes for accurate results, but far fewer opportunities are _wasted_ on inferior variants.
 
-    Test: Split test
-    Sample size: 5000
+```
+Test: Split test
+Sample size: 10000
 
-    Expected results:
-      Variant A: 5.1%
-      Variant B: 7.5%
+Expected results:
+  Variant A: 5%
+  Variant B: 7%
 
-    Actual results:
-      Variant A: 5.6% 142/2534
-      Variant B: 8.0% 197/2466
+Actual results:
+  Variant A: 5.0% 248/4997
+  Variant B: 7.0% 348/5003
 
-    Test: Epsilon Greedy
-    Sample size: 5000
+Test: Epsilon Greedy
+Sample size: 10000
 
-    Expected results:
-      Variant A: 5.1%
-      Variant B: 7.5%
+Expected results:
+  Variant A: 5%
+  Variant B: 7%
 
-    Actual results:
-      Variant A: 5.0% 239/4735
-      Variant B: 6.8% 18/265
+Actual results:
+  Variant A: 5.2% 495/9476
+  Variant B: 7.3% 38/524
+```
 
 ## Prerequisites
 
