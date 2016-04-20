@@ -1,0 +1,13 @@
+Test: <%= @test.name %>
+Sample size: <%= @test.sample_size %>
+
+Expected results:
+<% @test.results.each do |key, value| -%>
+  Variant: <%= key %>: <%= value %>%
+<% end -%>
+
+Actual results:
+<% for variant in @test.variants -%>
+  Variant: <%= variant %>: <%= User.conversion_rate_for_variant(variant) %>% <%= User.conversions_for_variant(variant) %>/<%= User.total_for_variant(variant) %>
+<% end -%>
+
