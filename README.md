@@ -74,6 +74,15 @@ or
 
     $ rake run:epsilon_greedy
 
+
+### Setting the expected final results
+
+By default, the tests will run with an A and B variant, both within the 5%—15% range. To pass in your own variant names, and their expected conversion rates, set the `RESULTS` environment variable, passing in a JSON object with the variants and conversion rates.
+
+
+    $ rake RESULTS='{"A":9.32,"B":11.65}'
+
+
 ### Setting the number of samples
 
 By default, the tests will run with 5000 samples each test. If you'd like to change this, simply set an env variable like so:

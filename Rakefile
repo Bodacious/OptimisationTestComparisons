@@ -11,19 +11,23 @@ rescue LoadError
   # no rspec available
 end
 
+DEFAULT_RANGE = 5..15
 
-SAMPLES = ENV["SAMPLES"].nil? ? 5_000 : ENV["SAMPLES"].to_i
+SAMPLES = ENV.has_key?("SAMPLES") ? ENV["SAMPLES"].to_i : 5_000
+
+RESULTS = ENV.has_key?("RESULTS") ? JSON.parse(ENV["RESULTS"]) :
+  { "A" => rand(DEFAULT_RANGE), "B" => rand(DEFAULT_RANGE) }
 
 namespace :run do
 
   desc "Run the Split test"
   task :split do |t, args|
-    Tests::Split.new(SAMPLES, { "A" => 5.1, "B" => 7.5 }).run!
+    Tests::Split.new(SAMPLES, RESULTS).run!
   end
 
   desc "Run the greedy test"
   task :epsilon_greedy do
-    Tests::EpsilonGreedy.new(SAMPLES, { "A" => 5.1, "B" => 7.5 }).run!
+    Tests::EpsilonGreedy.new(SAMPLES, RESULTS).run!
   end
 
   desc "Run all tests"
