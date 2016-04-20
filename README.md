@@ -97,3 +97,8 @@ The **Epsilon Greedy** test has a random element to it. The algoritm will assign
 
     # Run with 1000 samples, and allocate a random variant 20% of the time.
     $ rake run:epsilon_greedy_test SAMPLES=1000 RANDOM=20
+
+
+## Want to run a test on your website?
+
+[Katana Code](http://katanacode.com/?utm_campaign=OptimisationTestComparisons&utm_source=GitHub&utm_medium=README) is a software development based in Edinburgh Scotland. We work with startups on 4 different continents, helping them design, build, and optimise their digital products.
