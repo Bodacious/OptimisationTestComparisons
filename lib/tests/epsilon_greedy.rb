@@ -9,6 +9,10 @@ class Tests::EpsilonGreedy < Tests::Base
   def initialize(*args)
     super
     @name = 'Epsilon Greedy'
+    # Explicitly initialize
+    variants.each do |name|
+      variant_data[name].increment_count
+    end
   end
 
 
@@ -23,7 +27,7 @@ class Tests::EpsilonGreedy < Tests::Base
   end
 
   def determine_variant_for_user
-    if rand < RANDOM_RATE or variant_data.empty?
+    if rand < RANDOM_RATE
       random_variant
     else
       most_lucrative_variant
