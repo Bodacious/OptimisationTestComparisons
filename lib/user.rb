@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   # = Validations =
   # ===============
 
-  validates :variant, presence: true, format: { with: /\A[A-Z]{1}\Z/i }
+  validates :variant, presence: true
 
 
   # ==========
